@@ -1,5 +1,7 @@
 # Project01 development kit for Angular 🔥
 
+> This is a collection of smart services and other partials for Angular.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
