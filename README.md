@@ -9,7 +9,7 @@
 > - Font Awesome, Google Material Icons & Google Font imports
 > - *styles.scss under construction*
 > 
-> Things to do
+> **Things to do**
 > - SEO Title Service
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
