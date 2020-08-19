@@ -1,7 +1,8 @@
 # Project01 development kit for Angular 🔥
 
 > This is a collection of smart services and other partials for Angular.
-> Consisting of
+>
+> **Consisting of**
 > - Http Service with Caching in 2 ways
 > - Cookie Service (get, set, delete)
 > - Responsive Navigation bar
