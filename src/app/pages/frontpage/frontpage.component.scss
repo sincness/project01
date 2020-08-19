@@ -1,0 +1,14 @@
+section {
+    padding-top: 10rem;
+    padding: 10rem 1rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: #191919;
+
+    article {
+        padding: 1rem;
+        background: #ffffff90;
+        border-radius: 10px;
+    }
+}

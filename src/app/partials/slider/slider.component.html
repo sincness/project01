@@ -1,0 +1,17 @@
+<section class="slider" *ngIf="collection.length >= 2">
+    <span id="left" (click)="previous()">
+        <i class="fas fa-chevron-circle-left"></i>
+    </span>
+    <span id="right" (click)="next()">
+        <i class="fas fa-chevron-circle-right"></i>
+    </span>
+    <figure *ngFor="let image of collection; let i = index">
+        <img [src]="image" draggable="false" alt="Slide">
+    </figure>
+
+</section>
+<section class="img" *ngIf="collection.length === 1">
+    <figure>
+        <img src="{{collection[0]}}" draggable="false" alt="Billede">
+    </figure>
+</section>

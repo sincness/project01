@@ -1,0 +1,142 @@
+nav.toolbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    ul {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            a {
+
+            }
+        }
+    }
+}
+
+
+
+
+
+#toolbar {
+    // background-color: #E5EAFA;
+    background-color: #e2e2e2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .16);
+    transition: margin-left .5s;
+    height: 60px;
+    min-width: 100vw;
+
+    span.material-icons {
+        margin-right: 1rem;
+        font-size: 2rem;
+        display: none;
+        color: #111;
+        align-self: center;
+        cursor: pointer;
+
+        @media(max-width:1050px){
+            display: block;
+        }
+    }
+  
+    figure {
+      width: 100%;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      cursor: pointer;  
+
+      img {
+        width: 6rem;
+      }
+    }
+  
+    ul {
+      display: flex;
+      align-self: center;
+      justify-self: end;
+
+      @media(max-width:1050px){
+        display: none;
+      }
+  
+      li {
+        padding: 1rem;
+
+        a {
+          font-weight: 400;
+          font-size: .8rem;
+          text-transform: uppercase;
+          color: #111;
+          white-space: nowrap;
+          transition: color linear 150ms;
+
+          &:hover {
+            color: #2448bc;
+          }
+        }
+  
+        span {
+          align-self: center;
+          position: absolute;
+          bottom: -0.2em;
+          left: 50%;
+          transform: translateX(-50%);
+          display: none;
+        }
+      }
+    }
+  
+    
+
+
+  }
+
+
+  #side-toolbar {
+    user-select: none;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background-color: #2448bc;
+    opacity: .98; // Kan slåes fra, altså ikke nødvendig
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: .5s;
+
+  
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+
+        li {
+            
+            a {
+            white-space: nowrap;
+            padding: .25rem;
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            color:#fff;
+            transition: color 175ms ease-in-out;
+            
+                &:hover {
+                    color:#111;
+                }
+            }
+        }
+    }
+  }

@@ -1,0 +1,49 @@
+.slider {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    user-select: none;
+    #left, #right {
+        z-index: 2;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+        border-radius: 50%;
+        font-size: 2em;
+    }
+    #left {
+        left: 2rem;
+    }
+    #right {
+        right: 2rem;
+    }
+    figure {
+        transition: all 350ms ease-in-out;
+        width: 100vw;
+        flex-shrink: 0;
+        img {
+            object-fit: cover;
+            height: 765px;
+            width: 100%;
+
+        }
+    }
+}
+.img {
+    user-select: none;
+    figure {
+        width: 100vw;
+        img {
+            object-fit: cover;
+            height: 365px;
+            width: 100%;
+        }
+    }
+}
