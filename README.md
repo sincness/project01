@@ -1,6 +1,15 @@
 # Project01 development kit for Angular 🔥
 
 > This is a collection of smart services and other partials for Angular.
+> Consisting of
+> - Http Service with Caching in 2 ways
+> - Cookie Service (get, set, delete)
+> - Responsive Navigation bar
+> - Font Awesome, Google Material Icons & Google Font imports
+> - *styles.scss under construction*
+> 
+> Things to do
+> - SEO Title Service
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
