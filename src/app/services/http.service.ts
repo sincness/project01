@@ -73,7 +73,7 @@ export class HttpService {
 
 
   constructor(private http: HttpClient) {
-    this.getProjects();
+    // this.getProjects();
    }
   
    get data() {
@@ -92,8 +92,8 @@ export class HttpService {
 
   getProjects(): void {
     this.projects$ = this.http.get<GitProject[]>(this.baseUrl).pipe(
-      // map(projects => projects.filter(project => this.projects.includes(project.name))
-      map(projects => projects.filter(project => project)
+      map(projects => projects.filter(project => this.projects.includes(project.name))
+      // map(projects => projects.filter(project => project)
       ),
       shareReplay({ bufferSize: 1, refCount: true }),
       catchError(error => of(error))

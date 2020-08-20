@@ -1,0 +1,38 @@
+form {
+    margin: 0 10%;
+    margin-left: auto;
+    width: 300px;
+    label {
+        display: block;
+        margin: 1rem 0 .5rem;
+        font-size: .875rem;
+    }
+    section {
+        position: relative;
+        input {
+            padding: .5rem;
+            width: 100%;
+        }
+        span {
+            transform: translateY(-50%);
+            top: 50%;
+            right: 1rem;
+            z-index: 1;
+            position: absolute;
+            font-size: 1rem;
+            &.denied {
+                color: #c14747;
+            }
+            &.check {
+                color: #47c160;
+            }
+        }
+    }
+    button {
+        margin-top: 1rem;
+        padding: .5rem;
+        width: 100%;
+        background-color: #47c160;
+        color: #fff;
+    }
+}

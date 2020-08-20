@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-collection',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: HttpService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
   }
 
 }

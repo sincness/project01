@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   menuOpen: boolean;
-  constructor() { }
+  // online: boolean;
+  // online = this.auth.online;
+  online = this.auth.currentUserValue ? true : false
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -33,4 +37,7 @@ export class NavComponent implements OnInit {
     return document.querySelector(selector);
   }
 
+  logout() {
+    this.auth.logout();
+  }
 }

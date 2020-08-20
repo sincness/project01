@@ -1,1 +1,19 @@
-<p>collection works!</p>
+<p>lasdlasd</p>
+<!-- <section *ngIf="http.data | async as data">
+    <article>
+        <h2>{{data.title}}</h2>
+        <h5>{{data.area}}</h5>
+        <p>{{data.description}}</p>
+    </article>
+</section> -->
+<section *ngIf="http.projects$ | async as projects">
+    <article *ngFor="let item of projects">
+        <a href="{{ item.html_url }}">{{ item.name }}</a>
+        <p>{{ item.description }}</p>
+        <div>
+            <span><i class="material-icons">code</i> {{ item.language }}</span>
+            <span><i class="material-icons">star</i> {{ item.stargazers_count }}</span>
+            <span><i class="material-icons">cloud_download</i> {{ item.forks }}</span>
+        </div>
+    </article>
+</section>
