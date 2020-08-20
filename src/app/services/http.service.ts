@@ -33,7 +33,7 @@ interface RoomItem {
 interface Room {
   status: boolean;
   error: string;
-  item: [RoomItem];
+  item: {RoomItem};
 
 }
 interface Response {
