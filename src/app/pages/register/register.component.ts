@@ -5,24 +5,23 @@ import { AuthService } from 'src/app/services/auth.service';
 import { first } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent implements OnInit {
-  login: FormGroup;
+export class RegisterComponent implements OnInit {
+  register: FormGroup;
   returnUrl: string;
   error: string;
-  title = this.route.snapshot.data.title;
-
-
+  title: string = this.route.snapshot.data.title;
   constructor(private auth: AuthService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private TitleService: Title) { }
 
-  ngOnInit(): void {
-    this.TitleService.setTitle(this.title);
+  ngOnInit() {
+  this.TitleService.setTitle(this.title);
     if (this.auth.currentUserValue) this.router.navigate(['/']);
-    this.login = this.fb.group({
+    this.register = this.fb.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
@@ -36,13 +35,11 @@ export class LoginComponent implements OnInit {
     }
 
     if (this.form.username.value && this.form.password.value) {
-      this.auth.login(userdata).pipe( first() ).subscribe( data => {
+      this.auth.register(userdata).pipe( first() ).subscribe( data => {
         this.router.navigate([this.returnUrl]);
-        location.reload();
     },
     error => {
         error.statusText === 'Unauthorized' ? this.error = 'Forkerte brugeroplysninger' : this.error = error.statusText;
-        // this.error = error.statusText;
         setTimeout(_ => {
             this.error = '';
         }, 2000);
@@ -52,7 +49,8 @@ export class LoginComponent implements OnInit {
   }
 
   get form() {
-    return this.login.controls;
+    return this.register.controls;
   }
+
 
 }

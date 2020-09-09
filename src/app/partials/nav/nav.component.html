@@ -1,5 +1,5 @@
-<nav id="toolbar">
-    <span (click)="menuOpen = !menuOpen; menu()" class="material-icons">menu</span>
+<nav #toolbar id="toolbar">
+    <span (click)="menuOpen = !menuOpen; menu()" #icon class="material-icons">menu</span>
     <figure>
         <img routerLink="/" src="../../../assets/svg/logo.svg" alt="Logo">
     </figure>
@@ -7,17 +7,16 @@
         <li><a routerLink="/">Forside</a></li>
         <li><a routerLink="/samling">Samling</a></li>
         <li *ngIf="!online"><a routerLink="/login">Log ind</a></li>
+        <li *ngIf="online"><a routerLink="/profil">Profil</a></li>
         <li *ngIf="online"><a (click)="logout()">Log ud</a></li>
     </ul>
 </nav>
-<nav id="side-toolbar">
+<nav #sideToolbar id="side-toolbar">
     <ul>
         <li><a routerLink="/" (click)="close()">Forside</a></li>
         <li><a routerLink="/samling" (click)="close()">Samling</a></li>
-        <!-- <li><a routerLink="/rooms" (click)="anim()">Værelser</a></li> -->
-        <!-- <li><a routerLink="/reservation" (click)="anim()">Reservation</a></li> -->
         <li *ngIf="!online"><a routerLink="/login" (click)="close()">Log ind</a></li>
-        <!-- <li *ngIf="online"><a (click)="logout();close()">Log ud</a></li> -->
         <li *ngIf="online"><a routerLink="/min-side" (click)="close()">Min side</a></li>
+        <li *ngIf="online"><a (click)="logout();close()">Log ud</a></li>
     </ul>
 </nav>

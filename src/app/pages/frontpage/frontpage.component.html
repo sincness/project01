@@ -1,3 +1,5 @@
+<app-slider [(collection)]="images"></app-slider>
+
 <section *ngIf="http.projects$ | async as projects">
     <article *ngFor="let item of projects">
         <a href="{{ item.html_url }}">{{ item.name }}</a>
@@ -9,10 +11,30 @@
         </div>
     </article>
 </section>
-<section *ngIf="http.data | async as data">
+<button (click)="yolo()"> 🥪 🧰 🌶 </button>
+<strong>{{ 'Sat Aug 28 2020 22:50:25 GMT+0200 (Centraleuropæisk sommertid)' | timeAgo }}</strong>
+<strong>{{ 'Thu Aug 26 2020 22:50:25 GMT+0200 (Centraleuropæisk sommertid)' | timeAgo }}</strong>
+<strong>{{ 'Wed Aug 25 2020 22:50:25 GMT+0200 (Centraleuropæisk sommertid)' | timeAgo }}</strong>
+<strong>{{ 'Tue Aug 17 2020 22:50:25 GMT+0200 (Centraleuropæisk sommertid)' | timeAgo }}</strong>
+<div class="data-widget">
+  <div class="controls">
+    <button (click)="reverse()">Vend rækkefølgen om</button>
+    <button (click)="sortTimestamp()">Sorter ud fra timestamp</button>
+    <button (click)="sortBalance()">Sorter ud fra balance</button>
+    <button (click)="sortId()">Sorter ud fra id</button>
+    <button (click)="sortName()">Sorter ud fra navn</button>
+  </div>
+  <article *ngFor="let item of test">
+    ID: {{item.id}} NAVN: {{item.name}} BALANCE: {{item.balance}} TIMESTAMP: {{item.timestamp}} DATO: {{unixTimestampToDate(item.timestamp)}}
+  </article>
+</div>
+<button (click)="toUnixTimestamp(dato)">convert to unix</button>
+{{dato}}
+
+<!-- <section *ngIf="http.data | async as data">
     <article>
         <h2>{{data.title}}</h2>
         <h5>{{data.area}}</h5>
         <p>{{data.description}}</p>
     </article>
-</section>
+</section> -->

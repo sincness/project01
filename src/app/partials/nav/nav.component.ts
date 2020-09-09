@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,34 +7,31 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
+  @ViewChild('toolbar') toolbar;
+  @ViewChild('sideToolbar') sideToolbar;
+  @ViewChild('icon') icon;
+
   menuOpen: boolean;
-  // online: boolean;
-  // online = this.auth.online;
-  online = this.auth.currentUserValue ? true : false
+  online: boolean = this.auth.currentUserValue ? true : false;
+
   constructor(private auth: AuthService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   menu() {
     (this.menuOpen) ? this.open() : this.close();
   }
 
   open() {
-    this.get('#side-toolbar').style.width = '250px';
-    this.get('#toolbar').style.marginLeft = '250px';
-    this.get('#toolbar > span').textContent = 'menu_open';
+    this.toolbar.nativeElement.style.marginLeft = '250px';
+    this.sideToolbar.nativeElement.style.width = '250px';
+    this.icon.nativeElement.textContent = 'menu_open';
   }
 
   close() {
-    this.get('#side-toolbar').style.width = '0';
-    this.get('#toolbar').style.marginLeft = '0';
-    this.get('#toolbar > span').textContent = 'menu';
-  }
-
-  // Query Selector smart get Funktion
-  get(selector) {
-    return document.querySelector(selector);
+    this.toolbar.nativeElement.style.marginLeft = '0';
+    this.sideToolbar.nativeElement.style.width = '0';
+    this.icon.nativeElement.textContent = 'menu';
   }
 
   logout() {

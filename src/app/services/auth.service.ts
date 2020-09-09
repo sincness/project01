@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CookieService } from './cookie.service';
@@ -8,6 +8,7 @@ import { CookieService } from './cookie.service';
 interface User {
   username: string;
   password: string;
+  jwt?: string;
   access_token?: string;
   user_id?: string;
   email?: string;
@@ -41,21 +42,27 @@ export class AuthService {
   }
 
   login(cred: object) {
-    return this.http.post<any>('https://api.mediehuset.net/token', cred)
+    // return this.http.post<any>('https://api.mediehuset.net/token', cred)
+    return this.http.post<any>('http://localhost:8080/login', cred)
         .pipe(map(user => {
-            // gemmer brugers oplysninger samt jwt token i localstorage for at holde brugeren logget ind imellem klientopdateringer af siden
-            this.cookie.set('token', user.access_token);
-            this.cookie.set('user', JSON.stringify(user));
-            // localStorage.setItem('user', JSON.stringify(user));
+          console.log(user);
+
+            this.cookie.set('token', user.jwt);
+            this.cookie.set('user', JSON.stringify(user), 1);
             this.currentUserSubject.next(user);
             return user;
         }));
+  }
+  register(cred: object) {
+    return this.http.post<any>('http://localhost:8080/users', cred)
+      .pipe(map(res => {
+        return res;
+      }));
   }
 
   logout() {
     this.cookie.delete('token')
     this.cookie.delete('user')
-    // localStorage.removeItem('user');
     this.currentUserSubject.next(null);
     location.reload();
   }

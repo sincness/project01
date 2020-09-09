@@ -1,0 +1,29 @@
+
+<form [formGroup]="article" (ngSubmit)="submit()" method="POST">
+  <h2>Opret en artikel</h2>
+  <label for="image">Billede</label>
+ <section>
+     <input type="text" formControlName="image" placeholder="Indsæt et billedelink">
+     <span class="check" *ngIf="form.image.valid && !form.image.invalid"><i class="fas fa-check"></i></span>
+     <span class="denied" *ngIf="!form.image.valid && form.image.dirty"><i class="fas fa-times"></i></span>
+  </section>
+  <label for="title">Titel</label>
+ <section>
+     <input type="text" formControlName="title" placeholder="Indtast en titel">
+     <span class="check" *ngIf="form.title.valid && !form.title.invalid"><i class="fas fa-check"></i></span>
+     <span class="denied" *ngIf="!form.title.valid && form.title.dirty"><i class="fas fa-times"></i></span>
+  </section>
+
+  <label for="content">Indhold</label>
+  <section>
+      <textarea type="text" formControlName="content" placeholder="Indtast noget indhold…"></textarea>
+      <span class="check" *ngIf="form.content.valid && !form.content.invalid"><i class="fas fa-check"></i></span>
+      <span class="denied" *ngIf="!form.content.valid && form.content.dirty"><i class="fas fa-times"></i></span>
+  </section>
+
+  <!-- <div *ngIf="form.password.invalid && form.password.touched" class="error"><p>Adgangskoden er ikke gyldig</p></div> -->
+
+  <button [disabled]="!article.valid" type="submit">Opret artikel 📰 </button>
+  <span class="error" *ngIf="error">{{error}}</span>
+
+</form>

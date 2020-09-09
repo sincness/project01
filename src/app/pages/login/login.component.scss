@@ -1,6 +1,7 @@
 form {
-    margin: 0 10%;
+    margin: 1rem 10%;
     margin-left: auto;
+    margin-right: auto;
     width: 300px;
     label {
         display: block;
@@ -35,4 +36,15 @@ form {
         background-color: #47c160;
         color: #fff;
     }
+}
+
+section.links {
+  margin: 1rem 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: .875rem;
 }

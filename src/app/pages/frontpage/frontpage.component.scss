@@ -12,3 +12,14 @@ section {
         border-radius: 10px;
     }
 }
+
+div.data-widget {
+  padding: 2rem;
+
+  div.controls {
+    padding-bottom: 1rem;
+    button {
+      padding: .5rem 1rem;
+    }
+  }
+}

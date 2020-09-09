@@ -1,5 +1,6 @@
 
 <form [formGroup]="login" (ngSubmit)="submit()" method="POST">
+  <h2>Log ind</h2>
     <label for="username">Brugernavn</label>
    <section>
        <input type="text" formControlName="username" placeholder="Indtast dit brugernavn">
@@ -7,7 +8,7 @@
        <span class="denied" *ngIf="!form.username.valid && form.username.dirty"><i class="fas fa-times"></i></span>
     </section>
     <!-- <div *ngIf="form.username.invalid && form.username.touched" class="error"><p>Brugernavnet er ikke gyldigt</p></div> -->
-    
+
     <label for="password">Adgangskode</label>
     <section>
         <input type="password" formControlName="password" placeholder="Indtast din adgangskode">
@@ -16,8 +17,11 @@
     </section>
 
     <!-- <div *ngIf="form.password.invalid && form.password.touched" class="error"><p>Adgangskoden er ikke gyldig</p></div> -->
-    
-    <button [disabled]="!login.valid" type="submit">Log ind</button>
-    <span class="error" *ngIf="error">{{error}}</span>
 
+    <button [disabled]="!login.valid" type="submit">Log ind  🚀 </button>
+    <span class="error" *ngIf="error">{{error}}</span>
 </form>
+<section class="links">
+  <a routerLink="/registrer">Opret en bruger</a>
+  <a routerLink="/glemt">Glemt adgangskode</a>
+</section>

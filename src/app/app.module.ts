@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,6 +11,13 @@ import { CollectionComponent } from './pages/collection/collection.component';
 import { SliderComponent } from './partials/slider/slider.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './services/http.service';
+import { RegisterComponent } from './pages/register/register.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { ConsentComponent } from './partials/consent/consent.component';
+import { CookieDirective } from './partials/consent/cookie.directive';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { TimeAgoPipe } from './services/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     CollectionComponent,
     SliderComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ErrorComponent,
+    ConsentComponent,
+    CookieDirective,
+    ProfileComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule
   ],
   providers: [
-
+    Title
+    // HttpService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpService } from './services/http.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // images = ['../../../assets/svg/logo.svg', 'https://www.vectorportal.com/img_novi/roads-and-cars-vectorportal.jpg', 'https://www.vectorportal.com/img_novi/business-analytics-vector.jpg'];
   title = 'project01';
+  constructor(private http: HttpService, private titleService: Title) {
 
+  }
+  ngOnInit(): void {
+    this.titleService.setTitle(this.title);
+  }
 }

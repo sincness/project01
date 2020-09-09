@@ -17,3 +17,18 @@
         </div>
     </article>
 </section>
+<section class="news" *ngIf="http.news$ | async as news">
+    <article *ngFor="let item of news">
+        <!-- <a href="{{ item.image }}">{{ item.title }}</a> -->
+        <figure>
+          <img [src]="item.image" [alt]="item.title">
+        </figure>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.content }}</p>
+        <!-- <div>
+            <span><i class="material-icons">code</i> {{ item.language }}</span>
+            <span><i class="material-icons">star</i> {{ item.stargazers_count }}</span>
+            <span><i class="material-icons">cloud_download</i> {{ item.forks }}</span>
+        </div> -->
+    </article>
+</section>

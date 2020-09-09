@@ -19,10 +19,11 @@ $linkAct: #e63232;
 }
 
 body {
-    min-height: 100%;
+    min-height: 100vh;
     background-color: $bg;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    position: relative;
 }
 
 main {
@@ -46,7 +47,7 @@ ul {
     list-style: none;
 }
 
-input {
+input, textarea {
     border: 1px solid #E2E2E2;
     border-radius: 2px;
 }
