@@ -42,8 +42,8 @@ export class AuthService {
   }
 
   login(cred: object) {
-    // return this.http.post<any>('https://api.mediehuset.net/token', cred)
-    return this.http.post<any>('http://localhost:8080/login', cred)
+    return this.http.post<any>('https://api.mediehuset.net/token', cred)
+    // return this.http.post<any>('http://localhost:8080/login', cred)
         .pipe(map(user => {
           console.log(user);
 

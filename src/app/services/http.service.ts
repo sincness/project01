@@ -65,7 +65,8 @@ export class HttpService {
   projects = [
     'hotel-overlook',
     'bageriet',
-    'mediesuset'
+    'mediesuset',
+    'rordal-run',
   ];
 
   // private cache$: Observable<RoomItem[]>;
